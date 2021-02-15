@@ -1,0 +1,112 @@
+/*RESET*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*SHARED*/
+.post {
+    cursor: pointer;
+    position: relative;
+    display: block;
+}
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(100px,293px));
+    justify-content: center;
+    gap: 28px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.post-image img {
+    width: 100%;
+    vertical-align: top;
+    height: 200px;
+}
+.post-overlay {
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.post:hover .post-overlay{
+    display: flex;
+}
+.post-likes,
+.post-comments {
+    width: 80px;
+    margin: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+/*HEADER*/
+.header {
+    border-bottom: solid 1px #e1e1e1;
+    padding: 10px;
+    position: fixed;
+    background-color: #fafafa;
+    width: 100%;
+    z-index: 2;
+}
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+}
+.header-input-container {
+    background-color: #fafafa;
+    border: solid 1px #e1e1e1;
+    width: 250px;
+}
+.header-search-input {
+    border: none;
+    background-color: #fafafa;
+    width: 100%;
+    text-align: center;
+    padding-top: 7px;
+}
+.header-icon-container {
+    display: flex;
+}
+.header-icon-link {
+    margin-right: 35px;
+}
+.header-profile-image img {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.separator {
+    height: 65px;
+}
+/*MAIN*/
+.main {
+    background-color: #fafafa;
+}
+/*MEDIA QUERIES*/
+@media (max-width: 768px) {
+    .post-list {
+        gap: 3px;
+        grid-template-columns: repeat(2,minmax(100px,293px));
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+@media (max-width: 600px) {
+    .header-input-container {
+        display: none;
+    }
+}
